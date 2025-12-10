@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process Documenter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <p class="eyebrow">24-hour MVP guide</p>
+      <h1>Process Documenter</h1>
+      <p class="subtitle">Follow the 8-step, mobile-first flow to turn your idea into a documented MVP using ChatGPT Projects.</p>
+    </header>
+
+    <section class="banner" aria-label="How to use">
+      <h2>How to use this screen</h2>
+      <ol>
+        <li>Open a ChatGPT Project for your idea.</li>
+        <li>Expand a step, tap <strong>Copy Prompt</strong>, and paste it into ChatGPT.</li>
+        <li>Keep ChatGPT writing to the markdown files named in each step.</li>
+        <li>Stay on this page and work down the list until all 8 steps are done.</li>
+      </ol>
+    </section>
+
+    <section id="steps" class="steps" aria-label="Process steps"></section>
+  </main>
+
+  <template id="step-template">
+    <article class="step">
+      <header class="step__header">
+        <div>
+          <p class="step__eyebrow"></p>
+          <h2 class="step__title"></h2>
+        </div>
+        <button class="step__toggle" aria-label="Toggle step">
+          <span class="toggle-icon">+</span>
+        </button>
+      </header>
+      <div class="step__content" hidden>
+        <p class="step__description"></p>
+        <div class="step__instructions"></div>
+          <div class="prompt" hidden>
+            <div class="prompt__label">ChatGPT Prompt</div>
+            <pre class="prompt__body" aria-live="polite"></pre>
+            <button class="prompt__copy" type="button">Copy Prompt</button>
+            <span class="sr-only prompt__status" aria-live="polite"></span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
